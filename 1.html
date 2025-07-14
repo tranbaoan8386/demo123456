@@ -1,140 +1,314 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giao Diện Tổng Hợp</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    .auth-form { max-width: 400px; margin: auto; }
-    .order-summary { background-color: #f8f9fa; padding: 20px; border-radius: 5px; }
-    .cart-item img { width: 80px; height: auto; object-fit: cover; }
-    .cart-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
-    .admin-section .table th, .admin-section .table td { vertical-align: middle; }
-    .admin-section { background-color: #f9f9f9; padding: 30px; border-radius: 8px; }
-  </style>
-</head>
-<body>
-<div class="container py-4">
-  <!-- Tabs -->
-  <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cart">🛒 Giỏ Hàng</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#login">🔐 Đăng Nhập</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#register">📝 Đăng Ký</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#changepass">🔁 Đổi Mật Khẩu</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#orders">📦 Đơn Hàng</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#admin">⚙️ Admin</button></li>
-  </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giao Diện Tổng Hợp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .auth-form {
+        max-width: 400px;
+        margin: auto;
+      }
+      .order-summary {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .cart-item img {
+        width: 80px;
+        height: auto;
+        object-fit: cover;
+      }
+      .cart-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+      }
+      .admin-section .table th,
+      .admin-section .table td {
+        vertical-align: middle;
+      }
+      .admin-section {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+        <li class="nav-item">
+          <button
+            class="nav-link active"
+            data-bs-toggle="tab"
+            data-bs-target="#cart"
+          >
+            🛒 Giỏ Hàng
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#login">
+            🔐 Đăng Nhập
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#register"
+          >
+            📝 Đăng Ký
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#changepass"
+          >
+            🔁 Đổi Mật Khẩu
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#orders"
+          >
+            📦 Đơn Hàng
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#admin">
+            ⚙️ Admin
+          </button>
+        </li>
+      </ul>
 
-  <div class="tab-content">
-    <!-- Giỏ hàng -->
-    <div class="tab-pane fade show active" id="cart">
-      <h4 class="mb-3">Giỏ hàng của bạn</h4>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="cart-item d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3">
-              <img src="https://via.placeholder.com/80" alt="product">
-              <div>
-                <h6 class="mb-1">Áo Hoodie</h6>
-                <p class="mb-0 text-muted">Màu: Nâu | Size: M</p>
+      <div class="tab-content">
+        <!-- Giỏ hàng -->
+        <div class="tab-pane fade show active" id="cart">
+          <h4 class="mb-3">Giỏ hàng của bạn</h4>
+          <div class="row">
+            <div class="col-md-8">
+              <div
+                class="cart-item d-flex align-items-center justify-content-between"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://via.placeholder.com/80" alt="product" />
+                  <div>
+                    <h6 class="mb-1">Áo Hoodie</h6>
+                    <p class="mb-0 text-muted">Màu: Nâu | Size: M</p>
+                  </div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary btn-sm">-</button>
+                  <input
+                    type="text"
+                    class="form-control form-control-sm text-center"
+                    style="width: 40px"
+                    value="1"
+                  />
+                  <button class="btn btn-outline-secondary btn-sm">+</button>
+                </div>
+                <div>480.000₫</div>
+                <button class="btn btn-danger btn-sm">🗑</button>
               </div>
             </div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-secondary btn-sm">-</button>
-              <input type="text" class="form-control form-control-sm text-center" style="width: 40px;" value="1">
-              <button class="btn btn-outline-secondary btn-sm">+</button>
+            <div class="col-md-4">
+              <div class="order-summary">
+                <h5>Thông tin giao hàng</h5>
+                <p><strong>Người nhận:</strong> aaaaa</p>
+                <p><strong>SĐT:</strong> 012345698</p>
+                <p><strong>Địa chỉ:</strong> 123 đường sao, Đắk Lắk</p>
+                <hr />
+                <div class="d-flex justify-content-between">
+                  <span>Tạm tính:</span><strong>940.000₫</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Khuyến mãi:</span
+                  ><span class="text-danger">Chưa áp dụng</span>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <h5>TỔNG:</h5>
+                  <h5>940.000₫</h5>
+                </div>
+                <hr />
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" checked /><label
+                    class="form-check-label"
+                    >Thanh toán khi nhận hàng</label
+                  >
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" /><label
+                    class="form-check-label"
+                    >Thanh toán bằng PAYPAL</label
+                  >
+                </div>
+                <button class="btn btn-primary w-100">ĐẶT HÀNG</button>
+              </div>
             </div>
-            <div>480.000₫</div>
-            <button class="btn btn-danger btn-sm">🗑</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="order-summary">
-            <h5>Thông tin giao hàng</h5>
-            <p><strong>Người nhận:</strong> aaaaa</p>
-            <p><strong>SĐT:</strong> 012345698</p>
-            <p><strong>Địa chỉ:</strong> 123 đường sao, Đắk Lắk</p>
-            <hr>
-            <div class="d-flex justify-content-between"><span>Tạm tính:</span><strong>940.000₫</strong></div>
-            <div class="d-flex justify-content-between"><span>Khuyến mãi:</span><span class="text-danger">Chưa áp dụng</span></div>
-            <div class="d-flex justify-content-between mt-2"><h5>TỔNG:</h5><h5>940.000₫</h5></div>
-            <hr>
-            <div class="form-check"><input class="form-check-input" type="radio" checked><label class="form-check-label">Thanh toán khi nhận hàng</label></div>
-            <div class="form-check mb-3"><input class="form-check-input" type="radio"><label class="form-check-label">Thanh toán bằng PAYPAL</label></div>
-            <button class="btn btn-primary w-100">ĐẶT HÀNG</button>
+
+        <!-- Đăng nhập -->
+        <div class="tab-pane fade" id="login">
+          <div class="auth-form mt-5">
+            <h3 class="text-center mb-4">Đăng Nhập 🔐</h3>
+            <form>
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Mật khẩu"
+              />
+              <div class="d-grid mb-2">
+                <button class="btn btn-primary">ĐĂNG NHẬP</button>
+              </div>
+              <div class="text-center">
+                <a href="#register" data-bs-toggle="tab">Chưa có tài khoản?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Đăng ký -->
+        <div class="tab-pane fade" id="register">
+          <div class="auth-form mt-5">
+            <h3 class="text-center mb-4">Đăng Ký 📝</h3>
+            <form>
+              <input
+                type="text"
+                class="form-control mb-3"
+                placeholder="Họ tên"
+              />
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Mật khẩu"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Nhập lại mật khẩu"
+              />
+              <div class="d-grid">
+                <button class="btn btn-primary">ĐĂNG KÝ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Đổi mật khẩu -->
+        <div class="tab-pane fade" id="changepass">
+          <div class="auth-form mt-5">
+            <h3 class="text-center mb-4">Đổi Mật Khẩu 🔁</h3>
+            <form>
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Mật khẩu cũ"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Mật khẩu mới"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Xác nhận mật khẩu mới"
+              />
+              <div class="d-grid">
+                <button class="btn btn-primary">Xác nhận</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Đơn hàng -->
+        <div class="tab-pane fade" id="orders">
+          <h4 class="mb-3">Đơn Hàng Của Tôi 📦</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Ngày</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thanh toán</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>46</td>
+                <td>12/07/2025</td>
+                <td>940.000₫</td>
+                <td>Chờ xác nhận</td>
+                <td class="text-danger">Chưa thanh toán</td>
+                <td><button class="btn btn-info btn-sm">Chi tiết</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Admin -->
+        <div class="tab-pane fade" id="admin">
+          <div class="admin-section">
+            <h4 class="mb-3">Quản lý Sản phẩm</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Tên SP</th>
+                  <th>Giá</th>
+                  <th>Danh mục</th>
+                  <th>Thương hiệu</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Áo Khoác Nữ</td>
+                  <td>490.000₫</td>
+                  <td>Áo Khoác Nữ</td>
+                  <td>Gucci</td>
+                  <td>
+                    <button class="btn btn-sm btn-warning">Sửa</button>
+                    <button class="btn btn-sm btn-danger">Xóa</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Áo Hoodie Nam</td>
+                  <td>480.000₫</td>
+                  <td>Áo Khoác Nam</td>
+                  <td>Dior</td>
+                  <td>
+                    <button class="btn btn-sm btn-warning">Sửa</button>
+                    <button class="btn btn-sm btn-danger">Xóa</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Đăng nhập -->
-    <div class="tab-pane fade" id="login">
-      <div class="auth-form mt-5">
-        <h3 class="text-center mb-4">Đăng Nhập 🔐</h3>
-        <form>
-          <input type="email" class="form-control mb-3" placeholder="Email">
-          <input type="password" class="form-control mb-3" placeholder="Mật khẩu">
-          <div class="d-grid mb-2"><button class="btn btn-primary">ĐĂNG NHẬP</button></div>
-          <div class="text-center"><a href="#register" data-bs-toggle="tab">Chưa có tài khoản?</a></div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Đăng ký -->
-    <div class="tab-pane fade" id="register">
-      <div class="auth-form mt-5">
-        <h3 class="text-center mb-4">Đăng Ký 📝</h3>
-        <form>
-          <input type="text" class="form-control mb-3" placeholder="Họ tên">
-          <input type="email" class="form-control mb-3" placeholder="Email">
-          <input type="password" class="form-control mb-3" placeholder="Mật khẩu">
-          <input type="password" class="form-control mb-3" placeholder="Nhập lại mật khẩu">
-          <div class="d-grid"><button class="btn btn-primary">ĐĂNG KÝ</button></div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Đổi mật khẩu -->
-    <div class="tab-pane fade" id="changepass">
-      <div class="auth-form mt-5">
-        <h3 class="text-center mb-4">Đổi Mật Khẩu 🔁</h3>
-        <form>
-          <input type="password" class="form-control mb-3" placeholder="Mật khẩu cũ">
-          <input type="password" class="form-control mb-3" placeholder="Mật khẩu mới">
-          <input type="password" class="form-control mb-3" placeholder="Xác nhận mật khẩu mới">
-          <div class="d-grid"><button class="btn btn-primary">Xác nhận</button></div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Đơn hàng -->
-    <div class="tab-pane fade" id="orders">
-      <h4 class="mb-3">Đơn Hàng Của Tôi 📦</h4>
-      <table class="table table-bordered">
-        <thead><tr><th>Mã đơn</th><th>Ngày</th><th>Tổng tiền</th><th>Trạng thái</th><th>Thanh toán</th><th>Hành động</th></tr></thead>
-        <tbody>
-          <tr><td>46</td><td>12/07/2025</td><td>940.000₫</td><td>Chờ xác nhận</td><td class="text-danger">Chưa thanh toán</td><td><button class="btn btn-info btn-sm">Chi tiết</button></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Admin -->
-    <div class="tab-pane fade" id="admin">
-      <div class="admin-section">
-        <h4 class="mb-3">Quản lý Sản phẩm</h4>
-        <table class="table table-striped">
-          <thead><tr><th>Tên SP</th><th>Giá</th><th>Danh mục</th><th>Thương hiệu</th><th>Hành động</th></tr></thead>
-          <tbody>
-            <tr><td>Áo Khoác Nữ</td><td>490.000₫</td><td>Áo Khoác Nữ</td><td>Gucci</td><td><button class="btn btn-sm btn-warning">Sửa</button> <button class="btn btn-sm btn-danger">Xóa</button></td></tr>
-            <tr><td>Áo Hoodie Nam</td><td>480.000₫</td><td>Áo Khoác Nam</td><td>Dior</td><td><button class="btn btn-sm btn-warning">Sửa</button> <button class="btn btn-sm btn-danger">Xóa</button></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
